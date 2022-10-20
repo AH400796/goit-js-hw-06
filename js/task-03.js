@@ -16,10 +16,12 @@ const images = [
 const galleryRef = document.querySelector(".gallery");
 
 const galleryImages = images
-  .map((image) => `<li><img src=${image.url} alt="${image.alt}"></li>`)
+  .map(
+    (image) => `<li><img src=${image.url} alt="${image.alt}" width="400"></li>`
+  )
   .join("");
 
-galleryRef.insertAdjacentHTML("afterbegin", galleryImages);
+galleryRef.insertAdjacentHTML("beforeend", galleryImages);
 galleryRef.style.display = "flex";
 galleryRef.style.gap = "20px";
 galleryRef.style.listStyle = "none";
